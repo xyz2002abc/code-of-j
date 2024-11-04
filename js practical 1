@@ -1,0 +1,78 @@
+HTML FILE 
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, ini al-scale=1.0">  
+< tle>Area Calculator</ tle>  
+</head>  
+<body>  
+<h1>Area Calculator</h1>  
+<h2>Triangle Area</h2>  
+<label for="base">Base:</label>  
+<input type="number" id="base" placeholder="Enter base">  
+<label for="height">Height:</label>  
+<input type="number" id="height" placeholder="Enter height">  
+<bu on onclick="calculateTriangleArea()">Calculate Triangle Area</bu on>  
+<p id="triangleResult"></p>  
+<h2>Rectangle Area</h2>  
+<label for="length">Length:</label>  
+<input type="number" id="length" placeholder="Enter length">  
+<label for="breadth">Breadth:</label>  
+<input type="number" id="breadth" placeholder="Enter breadth">  
+<bu on onclick="calculateRectangleArea()">Calculate Rectangle Area</bu on>  
+<p id="rectangleResult"></p>  
+  <h2>Circle Area</h2>  
+  <label for="radius">Radius:</label>  
+  
+  <input type="number" id="radius" placeholder="Enter radius">  
+  <bu on onclick="calculateCircleArea()">Calculate Circle Area</bu on>  
+  <p id="circleResult"></p>  
+ 
+  <script src="./Script.js"></script>  
+</body>  
+</html> 
+ 
+ 
+JS FILE 
+ 
+// Func on to calculate the area of a triangle  
+ func on calculateTriangleArea() {  
+    const base = parseFloat(document.getElementById("base").value);  
+    const height = parseFloat(document.getElementById("height").value);  
+      
+    if (!isNaN(base) && !isNaN(height) && base > 0 && height > 0) {  
+      const area = 0.5 * base * height;  
+      document.getElementById("triangleResult").innerText = `Area of Triangle: ${area}`;  
+    } else {  
+      document.getElementById("triangleResult").innerText = "Please enter valid base and height.";  
+    }  
+  }  
+  // Func on to calculate the area of a rectangle  
+  func on calculateRectangleArea() {  
+    const length = parseFloat(document.getElementById("length").value);  
+    const breadth = parseFloat(document.getElementById("breadth").value);  
+      
+    if (!isNaN(length) && !isNaN(breadth) && length > 0 && breadth > 0) {  
+      const area = length * breadth;  
+   
+   
+      document.getElementById("rectangleResult").innerText = `Area of Rectangle: ${area}`;  
+    } else {  
+      document.getElementById("rectangleResult").innerText = "Please enter valid length and breadth.";  
+    }  
+  }  
+   
+  // Func on to calculate the area of a circle  
+  func on calculateCircleArea() {  
+    const radius = parseFloat(document.getElementById("radius").value);  
+      
+    if (!isNaN(radius) && radius > 0) {  
+      const area = Math.PI * radius * radius;  
+   
+      document.getElementById("circleResult").innerText = `Area of Circle: ${area}`;  
+   
+    } else {  
+      document.getElementById("circleResult").innerText = "Please enter a valid radius.";  
+    }  
+  }  
